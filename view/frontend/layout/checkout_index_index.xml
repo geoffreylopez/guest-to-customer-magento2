@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="customer-email" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="before-login-form" xsi:type="array">
+                                                                    <item name="children" xsi:type="array">
+                                                                        <item name="create-customer-container" xsi:type="array">
+                                                                            <item name="component"
+                                                                                  xsi:type="string">
+                                                                                Webatypique_GuestToCustomer/js/view/create-customer
+                                                                            </item>
+                                                                            <item name="config" xsi:type="array">
+                                                                                <item name="customScope" xsi:type="string">customCheckoutForm</item>
+                                                                                <item name="template" xsi:type="string">
+                                                                                    Webatypique_GuestToCustomer/create-customer
+                                                                                </item>
+                                                                            </item>
+                                                                            <item name="children" xsi:type="array">
+                                                                                <!-- Here we will add the form fields  -->
+                                                                            </item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
