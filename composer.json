@@ -1,0 +1,21 @@
+{
+  "name": "webatypique/module-guest-to-customer",
+  "version": "0.0.1",
+  "description": "Add checkbox in checkout to add possibility to create account for guest customer",
+  "type": "magento2-module",
+  "require": {
+    "php": "^7.4.0",
+    "magento/framework": "*"
+  },
+  "license": [
+    "Proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Webatypique\\GuestToCustomer\\": ""
+    }
+  }
+}
