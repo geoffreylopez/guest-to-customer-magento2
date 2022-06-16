@@ -1,6 +1,9 @@
 <!-- ko if: (!isCustomerLoggedIn) -->
 <div>
-    <input type="checkbox" id="create-account-cb" name="create-account-cb">
-    <label for="create-account-cb" data-bind="i18n: 'Create account'"></label>
+    <input type="checkbox" id="create-account" name="create-account">
+    <label for="create-account" data-bind="i18n: 'Create account'"></label>
+
+    <input type="password" placeholder="Password" id="create-account-password" name="create-account-password">
+    <input type="password" placeholder="Confirm Password" id="create-account-confirm-password" name="create-account-confirm-password">
 </div>
 <!-- /ko -->
