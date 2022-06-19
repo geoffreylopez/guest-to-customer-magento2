@@ -1,9 +1,22 @@
 <!-- ko if: (!isCustomerLoggedIn) -->
-<div>
-    <input type="checkbox" id="create-account" name="create-account">
-    <label for="create-account" data-bind="i18n: 'Create account'"></label>
+<form class="form form-create-account" method="post" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+    <fieldset id="create-account-fieldset" class="fieldset">
+        <div class="field">
+            <input type="checkbox" id="create-account" name="create-account">
+            <label for="create-account"><span data-bind="i18n: 'Create account'"></span></label>
+        </div>
 
-    <input type="password" placeholder="Password" id="create-account-password" name="create-account-password">
-    <input type="password" placeholder="Confirm Password" id="create-account-confirm-password" name="create-account-confirm-password">
-</div>
+        <div class="field">
+            <label for="create-account-password"><span data-bind="i18n: 'Password'"></span></label>
+            <input type="password" id="create-account-password" name="create-account-password" data-validate='{"required":true, "minlength":10}'>
+        </div>
+
+        <div class="field">
+            <label for="create-account-confirm-password"><span data-bind="i18n: 'Confirm Password'"></span></label>
+            <input type="password" id="create-account-confirm-password" name="create-account-confirm-password">
+        </div>
+
+        <div id="create-account-message"></div>
+    </fieldset>
+</form>
 <!-- /ko -->
