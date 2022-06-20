@@ -28,7 +28,7 @@ define([
 
             var url = urlFormatter.build('guesttocustomer/quote/save');
 
-            var createAccount = $('[name="create-account"]').val();
+            var createAccount = document.getElementById('create-account').checked;
             var firstname = $('[name="firstname"]').val();
             var lastname = $('[name="lastname"]').val();
             var email = document.getElementById('customer-email').value;
@@ -43,7 +43,7 @@ define([
             };
 
             if (!payload.create_account) {
-                return true;
+                return originalAction(paymentData, messageContainer);
             }
 
             var result = true;
