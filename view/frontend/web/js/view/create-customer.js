@@ -2,8 +2,9 @@ define([
     'jquery',
     'Magento_Ui/js/form/form',
     'ko'
-], function($, Component, ko,) {
+], function($, Component, ko) {
     'use strict';
+
     return Component.extend({
         showPassword: ko.observable(false),
 
