@@ -6,8 +6,7 @@ define([
     'Magento_Customer/js/model/customer',
     'Magento_Checkout/js/model/url-builder',
     'mage/url',
-    'Magento_Checkout/js/model/error-processor',
-    'uiRegistry'
+    'Magento_Checkout/js/model/error-processor'
 ], function (
     $,
     wrapper,
@@ -16,8 +15,7 @@ define([
     customer,
     urlBuilder,
     urlFormatter,
-    errorProcessor,
-    registry
+    errorProcessor
 ) {
     'use strict';
 
