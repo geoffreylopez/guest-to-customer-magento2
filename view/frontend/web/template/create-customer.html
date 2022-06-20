@@ -2,18 +2,18 @@
 <form class="form form-create-account" method="post" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
     <fieldset id="create-account-fieldset" class="fieldset">
         <div class="field">
-            <input type="checkbox" id="create-account" name="create-account">
+            <input type="checkbox" id="create-account" name="create-account" data-bind='checked: TogglePassword'>
             <label for="create-account"><span data-bind="i18n: 'Create account'"></span></label>
         </div>
 
-        <div class="field">
+        <div class="field create-account-password" data-bind="visible: showPassword">
             <label for="create-account-password"><span data-bind="i18n: 'Password'"></span></label>
-            <input type="password" id="create-account-password" name="create-account-password" data-validate='{"required":true, "minlength":10}'>
+            <input type="password" id="create-account-password" name="create-account-password" autocomplete="off">
         </div>
 
-        <div class="field">
+        <div class="field create-account-password" data-bind="visible: showPassword">
             <label for="create-account-confirm-password"><span data-bind="i18n: 'Confirm Password'"></span></label>
-            <input type="password" id="create-account-confirm-password" name="create-account-confirm-password">
+            <input type="password" id="create-account-confirm-password" name="create-account-confirm-password" autocomplete="off">
         </div>
 
         <div id="create-account-message"></div>

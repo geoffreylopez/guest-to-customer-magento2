@@ -24,7 +24,6 @@
                                                                                 Webatypique_GuestToCustomer/js/view/create-customer
                                                                             </item>
                                                                             <item name="config" xsi:type="array">
-                                                                                <item name="customScope" xsi:type="string">shippingAddress</item>
                                                                                 <item name="template" xsi:type="string">
                                                                                     Webatypique_GuestToCustomer/create-customer
                                                                                 </item>
