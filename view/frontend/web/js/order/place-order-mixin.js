@@ -26,44 +26,45 @@ define([
             agreementsAssigner(paymentData);
             var isCustomer = customer.isLoggedIn();
 
-            var url = urlFormatter.build('guesttocustomer/quote/save');
+            if(!isCustomer){
+                var url = urlFormatter.build('guesttocustomer/quote/save');
 
-            var createAccount = document.getElementById('create-account').checked;
-            var firstname = $('[name="firstname"]').val();
-            var lastname = $('[name="lastname"]').val();
-            var email = document.getElementById('customer-email').value;
-            var password = $('[name="create-account-password"]').val();
+                var createAccount = document.getElementById('create-account').checked;
+                var firstname = $('[name="firstname"]').val();
+                var lastname = $('[name="lastname"]').val();
+                var email = document.getElementById('customer-email').value;
+                var password = $('[name="create-account-password"]').val();
 
-            var payload = {
-                'create_account': createAccount ? 1 : 0,
-                'firstname': firstname,
-                'lastname': lastname,
-                'email':  email,
-                'password': password,
-            };
+                var payload = {
+                    'create_account': createAccount ? 1 : 0,
+                    'firstname': firstname,
+                    'lastname': lastname,
+                    'email':  email,
+                    'password': password,
+                };
 
-            if (!payload.create_account) {
-                return originalAction(paymentData, messageContainer);
+                if (!payload.create_account) {
+                    return originalAction(paymentData, messageContainer);
+                }
+
+                var result = true;
+
+                $.ajax({
+                    url: url,
+                    data: payload,
+                    dataType: 'text',
+                    type: 'POST',
+                }).done(
+                    function (response) {
+                        result = true;
+                    }
+                ).fail(
+                    function (response) {
+                        result = false;
+                        errorProcessor.process(response);
+                    }
+                );
             }
-
-            var result = true;
-
-            $.ajax({
-                url: url,
-                data: payload,
-                dataType: 'text',
-                type: 'POST',
-            }).done(
-                function (response) {
-                    result = true;
-                }
-            ).fail(
-                function (response) {
-                    result = false;
-                    errorProcessor.process(response);
-                }
-            );
-
             return originalAction(paymentData, messageContainer);
         });
     };
